@@ -12,6 +12,7 @@
 		547CD48E1E118E1600D2AC82 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD48D1E118E1600D2AC82 /* SignUpTableViewController.swift */; };
 		547CD4901E118EDE00D2AC82 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD48F1E118EDE00D2AC82 /* User.swift */; };
 		547CD4961E11925F00D2AC82 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD4951E11925F00D2AC82 /* UIViewControllerExtension.swift */; };
+		547CD4981E119D6B00D2AC82 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD4971E119D6B00D2AC82 /* MainViewController.swift */; };
 		54F6ED3F1E1179390089F0E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6ED3E1E1179390089F0E0 /* AppDelegate.swift */; };
 		54F6ED441E1179390089F0E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F6ED421E1179390089F0E0 /* Main.storyboard */; };
 		54F6ED461E1179390089F0E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54F6ED451E1179390089F0E0 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		547CD48D1E118E1600D2AC82 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		547CD48F1E118EDE00D2AC82 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		547CD4951E11925F00D2AC82 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		547CD4971E119D6B00D2AC82 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		54F6ED3B1E1179390089F0E0 /* HighStakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighStakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54F6ED3E1E1179390089F0E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		54F6ED431E1179390089F0E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				547CD48B1E118B9B00D2AC82 /* LoginTableViewController.swift */,
 				547CD48D1E118E1600D2AC82 /* SignUpTableViewController.swift */,
+				547CD4971E119D6B00D2AC82 /* MainViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				547CD4901E118EDE00D2AC82 /* User.swift in Sources */,
 				54F6ED3F1E1179390089F0E0 /* AppDelegate.swift in Sources */,
 				547CD4961E11925F00D2AC82 /* UIViewControllerExtension.swift in Sources */,
+				547CD4981E119D6B00D2AC82 /* MainViewController.swift in Sources */,
 				547CD48E1E118E1600D2AC82 /* SignUpTableViewController.swift in Sources */,
 				547CD48C1E118B9B00D2AC82 /* LoginTableViewController.swift in Sources */,
 			);

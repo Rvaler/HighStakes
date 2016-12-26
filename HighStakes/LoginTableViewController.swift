@@ -27,7 +27,13 @@ class LoginTableViewController: UITableViewController {
     // MARK: - Actions
     
     @IBAction func btnLoginTouchUpInside(_ sender: Any) {
-        
+        User.login(self.txtFieldEmail.text, self.txtFieldPassword.text) { (user, error, message) in
+            if let user = user { // log in suceeded
+                self.performSegue(withIdentifier: "segueFromLoginToMainApp", sender: user)
+            } else { // log in failed
+                self.showSimpleAlertController("Ops", message: error?.localizedDescription ?? "Something went wrong.")
+            }
+        }
     }
     @IBAction func btnSignUpTouchUpInside(_ sender: Any) {
         self.performSegue(withIdentifier: "segueFromLoginToSignUp", sender: nil)

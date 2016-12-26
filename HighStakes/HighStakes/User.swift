@@ -43,6 +43,24 @@ class User: PFUser {
     
     // MARK: - Methods
     
+    class func login(_ email: String?, _ password: String?, response: @escaping (_ user: User?, _ error: Error?, _ message: String?) -> ()) {
+        guard let email = email, !email.isEmpty else {
+            response(nil, nil, "Please fill your email.")
+            return
+        }
+        guard let password = password, !password.isEmpty else {
+            response(nil, nil, "Please fill your password.")
+            return
+        }
+        
+        User.logInWithUsername(inBackground: email, password: password) { (user: PFUser?, error: Error?) in
+            guard let user = user as? User else {
+                response(nil, error, "User not found.")
+                return
+            }
+            response(user, error, nil)
+        }
+    }
     class func signUp(_ email: String?, _ password: String?, _ firstName: String?, _ lastName: String?, response: @escaping (_ user: User?, _ error: Error?, _ message: String?)->()) {
         guard let firstName = firstName, !firstName.isEmpty else {
             response(nil, nil, "Please fill your firstName.")
