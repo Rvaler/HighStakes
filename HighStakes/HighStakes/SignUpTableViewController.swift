@@ -18,6 +18,7 @@ class SignUpTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedScreen()
         self.btnSignUp.radius(4)
     }
     

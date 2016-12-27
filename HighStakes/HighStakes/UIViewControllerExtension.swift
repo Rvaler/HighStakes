@@ -9,7 +9,13 @@
 import UIKit
 
 extension UIViewController {
-    
+    func hideKeyboardWhenTappedScreen() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
     func showSimpleAlertController(_ title: String?, message: String?, action: ((UIAlertAction) -> Void)? = nil) {
         let alertC = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         
