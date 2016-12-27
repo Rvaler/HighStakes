@@ -21,10 +21,12 @@ class SignUpTableViewController: UITableViewController {
         self.hideKeyboardWhenTappedScreen()
         self.btnSignUp.radius(4)
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
     // MARK: - Actions

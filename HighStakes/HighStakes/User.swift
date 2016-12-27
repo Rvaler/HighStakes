@@ -42,7 +42,6 @@ class User: PFUser {
     @NSManaged var fullName: String?
     
     // MARK: - Methods
-    
     class func login(_ email: String?, _ password: String?, response: @escaping (_ user: User?, _ error: Error?, _ message: String?) -> ()) {
         guard let email = email, !email.isEmpty else {
             response(nil, nil, "Please fill your email.")
