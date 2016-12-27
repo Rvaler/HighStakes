@@ -27,16 +27,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I76-Ei-BN5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
-                                                    <color key="backgroundColor" red="0.96862745100000003" green="0.59215686270000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </webView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bS-Od-Pje">
+                                                    <rect key="frame" x="156" y="74" width="62" height="62"/>
+                                                    <state key="normal" image="icon_player"/>
+                                                    <connections>
+                                                        <action selector="btnPlayVideoTouchUpInside:" destination="NNe-4G-KKe" eventType="touchUpInside" id="w3z-ij-Yyb"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.96862745100000003" green="0.59215686270000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="I76-Ei-BN5" secondAttribute="bottom" id="3RQ-QN-cMf"/>
-                                                <constraint firstAttribute="trailing" secondItem="I76-Ei-BN5" secondAttribute="trailing" id="OcK-Qn-Ayz"/>
-                                                <constraint firstItem="I76-Ei-BN5" firstAttribute="leading" secondItem="4wN-dg-5iR" secondAttribute="leading" id="Y3L-QT-Pff"/>
-                                                <constraint firstItem="I76-Ei-BN5" firstAttribute="top" secondItem="4wN-dg-5iR" secondAttribute="top" id="YOa-5c-6fU"/>
+                                                <constraint firstItem="4bS-Od-Pje" firstAttribute="centerX" secondItem="4wN-dg-5iR" secondAttribute="centerX" id="Evw-Xm-dEO"/>
+                                                <constraint firstItem="4bS-Od-Pje" firstAttribute="centerY" secondItem="4wN-dg-5iR" secondAttribute="centerY" id="cAi-oC-V4g"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -166,7 +168,7 @@
                         <outlet property="btnSignUp" destination="mfK-DL-xwW" id="7Wt-XI-qgs"/>
                         <outlet property="txtFieldEmail" destination="bou-rh-5t1" id="8pF-nP-BeY"/>
                         <outlet property="txtFieldPassword" destination="giP-NH-kec" id="Bur-qI-hdp"/>
-                        <outlet property="webView" destination="I76-Ei-BN5" id="Aqf-xb-Jof"/>
+                        <outlet property="viewPlayerContent" destination="4wN-dg-5iR" id="34Z-io-Jfh"/>
                         <segue destination="v7c-Mv-7DQ" kind="presentation" identifier="segueFromLoginToSignUp" id="IHg-fB-63p"/>
                         <segue destination="o7g-9k-cuB" kind="show" identifier="segueFromLoginToMainApp" id="57H-tD-GjC"/>
                     </connections>
@@ -431,4 +433,7 @@
             <point key="canvasLocation" x="1157.5999999999999" y="487.10644677661173"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_player" width="62" height="62"/>
+    </resources>
 </document>

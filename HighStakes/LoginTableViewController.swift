@@ -14,7 +14,7 @@ class LoginTableViewController: UITableViewController {
     @IBOutlet weak var txtFieldPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var viewPlayerContent: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,6 @@ class LoginTableViewController: UITableViewController {
         self.btnSignUp.radius(4)
         
         self.hideKeyboardWhenTappedScreen()
-        self.playVideo()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,8 +30,11 @@ class LoginTableViewController: UITableViewController {
     }
     
     // MARK: - Actions
-    
-    func playVideo(){
+
+    @IBAction func btnPlayVideoTouchUpInside(_ sender: Any) {
+        let webView = UIWebView(frame: self.viewPlayerContent.frame)
+        webView.backgroundColor = UIColor.App_Orange
+        self.view.addSubview(webView)
         self.view.bringSubview(toFront: webView)
         
         webView.allowsInlineMediaPlayback = true
@@ -41,7 +43,7 @@ class LoginTableViewController: UITableViewController {
         
         let videoID = "ycPmjdwxIOQ" // https://www.youtube.com/watch?v=zN-GGeNPQEg
         
-        let embededHTML = "<html><body style='margin:0px;padding:0px;'><script type='text/javascript' src='http://www.youtube.com/iframe_api'></script><script type='text/javascript'>function onYouTubeIframeAPIReady(){ytplayer=new YT.Player('playerId',{events:{onReady:onPlayerReady}})}function onPlayerReady(a){a.target.playVideo();}</script><iframe id='playerId' type='text/html' width='\(self.webView.frame.size.width)' height='\(self.webView.frame.size.height)' src='http://www.youtube.com/embed/\(videoID)?enablejsapi=1&rel=0&playsinline=1&autoplay=1' frameborder='0'></body></html>"
+        let embededHTML = "<html><body style='margin:0px;padding:0px;'><script type='text/javascript' src='http://www.youtube.com/iframe_api'></script><script type='text/javascript'>function onYouTubeIframeAPIReady(){ytplayer=new YT.Player('playerId',{events:{onReady:onPlayerReady}})}function onPlayerReady(a){a.target.playVideo();}</script><iframe id='playerId' type='text/html' width='\(webView.frame.size.width)' height='\(webView.frame.size.height)' src='http://www.youtube.com/embed/\(videoID)?enablejsapi=1&rel=0&playsinline=1&autoplay=1' frameborder='0'></body></html>"
         
         webView.loadHTMLString(embededHTML, baseURL: Bundle.main.resourceURL)
     }
