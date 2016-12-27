@@ -14,9 +14,11 @@ class SignUpTableViewController: UITableViewController {
     @IBOutlet weak var txtFieldLastName: UITextField!
     @IBOutlet weak var txtFieldEmail: UITextField!
     @IBOutlet weak var txtFieldPassword: UITextField!
+    @IBOutlet weak var btnSignUp: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.btnSignUp.radius(4)
     }
     
     override func didReceiveMemoryWarning() {

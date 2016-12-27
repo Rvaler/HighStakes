@@ -17,6 +17,9 @@ class LoginTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.btnLogin.radius(4)
+        self.btnSignUp.radius(4)
     }
 
     override func didReceiveMemoryWarning() {
