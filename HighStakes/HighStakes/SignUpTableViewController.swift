@@ -32,14 +32,17 @@ class SignUpTableViewController: UITableViewController {
     @IBAction func btnCancelTouchUpInside(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    @IBAction func btnSignUpTouchUpInside(_ sender: Any) {
-    
+    @IBAction func btnSignUpTouchUpInside(_ sender: UIButton) {
+        let undo = sender.showActivityIndicator(self.btnSignUp)
         User.signUp(txtFieldEmail.text, txtFieldPassword.text, txtFieldFirstName.text, txtFieldLastName.text) { (user, error, message) in
-            if let error = error {
-                self.showSimpleAlertController("Ops", message: error.localizedDescription)
-            } else {
-                self.dismiss(animated: true, completion: nil)
-            }
+            DispatchQueue.main.async(execute: {
+                undo()
+                if let _ = user {
+                    self.dismissModalStack(self, animated: true, completionBlock: nil)
+                } else {
+                    self.showSimpleAlertController("Ops", message: error?.localizedDescription ?? "Something went wrong.")
+                }
+            })
         }
     }
     

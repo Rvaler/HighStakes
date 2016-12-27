@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4SB-Hf-LZy">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Initial View Controller-->
+        <scene sceneID="R7A-d5-95L">
+            <objects>
+                <viewController id="Zdl-6V-QWX" customClass="InitialViewController" customModule="HighStakes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E8h-5m-wPW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fah-OV-z0G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6ng-IZ-hYR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighStakes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Oj-OR-oK0">
+                                <rect key="frame" x="132.5" y="319" width="110.5" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.59215686270000001" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Oj-OR-oK0" firstAttribute="centerX" secondItem="6ng-IZ-hYR" secondAttribute="centerX" id="FsE-V8-CkH"/>
+                            <constraint firstItem="6Oj-OR-oK0" firstAttribute="centerY" secondItem="6ng-IZ-hYR" secondAttribute="centerY" id="gOm-0J-gT4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ag2-Ef-pz6"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="31x-PC-4uX" kind="presentation" identifier="segueToLogin" id="irH-pA-5OV"/>
+                        <segue destination="hPg-G2-DeJ" kind="presentation" identifier="segueToMain" id="Js2-nW-V6d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y5V-cP-eR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1186" y="-162"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="gEV-ze-3Mr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="31x-PC-4uX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FOo-uF-eCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1774" y="-192"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="wxZ-ql-Lmp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="hPg-G2-DeJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W73-W7-JLe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1773" y="-130"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2Qb-I9-9Sg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="4SB-Hf-LZy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SRE-wl-8E6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zdl-6V-QWX" kind="relationship" relationship="rootViewController" id="xeq-Pp-FuM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="00W-6X-rmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.59999999999999" y="-162.3688155922039"/>
+        </scene>
+    </scenes>
+</document>

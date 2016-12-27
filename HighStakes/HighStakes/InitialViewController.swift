@@ -1,17 +1,24 @@
 //
-//  MainViewController.swift
+//  InitialViewController.swift
 //  HighStakes
 //
-//  Created by Rafael Valer on 26/12/16.
+//  Created by Rafael Valer on 27/12/16.
 //  Copyright © 2016 RafaelValer. All rights reserved.
 //
 
 import UIKit
 
-class MainViewController: UIViewController {
-
-    @IBOutlet weak var lblWelcome: UILabel!
+class InitialViewController: UIViewController {
     
+    enum Segue : String {
+        case ToLogin = "segueToLogin"
+        case ToMain = "segueToMain"
+        
+        func performIn(_ vc: UIViewController) {
+            vc.performSegue(withIdentifier: self.rawValue, sender: nil)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,18 +29,15 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Actions
-    
-    @IBAction func btnLogoutTouchUpInside(_ sender: Any) {
-        User.logOutInBackground { (error) in
-            if let error = error { // logout failed
-                self.showSimpleAlertController("Ops", message: error.localizedDescription)
-            } else { // logout succeeded
-                self.dismissModalStack(self, animated: true, completionBlock: nil)
-            }
+    override func viewDidAppear(_ animated: Bool) {
+        if let user = User.current() {
+            Segue.ToMain.performIn(self)
+        } else {
+            Segue.ToLogin.performIn(self)
         }
     }
     
+
     /*
     // MARK: - Navigation
 

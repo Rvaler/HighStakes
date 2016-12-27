@@ -23,6 +23,20 @@ extension UIViewController {
         
         self.present(alertC, animated: true, completion: nil)
     }
-    
+    func dismissModalStack(_ viewController: UIViewController, animated: Bool, completionBlock: (()->())?) {
+        if viewController.presentingViewController != nil {
+            var vc = viewController.presentingViewController!
+            while (vc.presentingViewController != nil) {
+                vc = vc.presentingViewController!;
+            }
+            DispatchQueue.main.async(execute: {
+                vc.dismiss(animated: animated, completion: nil)
+            })
+            
+            if let c = completionBlock {
+                c()
+            }
+        }
+    }
 }
 

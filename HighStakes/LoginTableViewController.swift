@@ -48,13 +48,17 @@ class LoginTableViewController: UITableViewController {
         webView.loadHTMLString(embededHTML, baseURL: Bundle.main.resourceURL)
     }
     
-    @IBAction func btnLoginTouchUpInside(_ sender: Any) {
+    @IBAction func btnLoginTouchUpInside(_ sender: UIButton) {
+        let undo = sender.showActivityIndicator(self.btnLogin)
         User.login(self.txtFieldEmail.text, self.txtFieldPassword.text) { (user, error, message) in
-            if let user = user { // log in suceeded
-                self.performSegue(withIdentifier: "segueFromLoginToMainApp", sender: user)
-            } else { // log in failed
-                self.showSimpleAlertController("Ops", message: error?.localizedDescription ?? "Something went wrong.")
-            }
+            DispatchQueue.main.async(execute: {
+                undo()
+                if let _ = user { // log in suceeded
+                    self.dismissModalStack(self, animated: true, completionBlock: nil)
+                } else { // log in failed
+                    self.showSimpleAlertController("Ops", message: message ?? error?.localizedDescription ?? "Something went wrong.")
+                }
+            })
         }
     }
     @IBAction func btnSignUpTouchUpInside(_ sender: Any) {

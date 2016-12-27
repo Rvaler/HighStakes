@@ -10,7 +10,43 @@ import UIKit
 
 extension UIView {
     
-    // MARK: - Layout
+    func showActivityIndicator(_ blockingButtons: UIButton...) -> (()->()){
+        
+        for button in blockingButtons{
+            button.isEnabled = false
+        }
+        
+        let indicator : UIActivityIndicatorView = UIActivityIndicatorView()
+        if let bg = self.backgroundColor , bg == UIColor.white {
+            indicator.activityIndicatorViewStyle = .gray
+        }
+        
+        indicator.hidesWhenStopped = true
+        
+        indicator.center = self.center
+        self.superview?.addSubview(indicator)
+        
+        if let button = self as? UIButton{
+            button.setTitle("", for: UIControlState.disabled)
+            button.setImage(UIImage(), for: UIControlState.disabled)
+            button.isEnabled = false
+        }
+        
+        indicator.startAnimating()
+        
+        let undoIndicator : ()->() = {
+            indicator.stopAnimating()
+            indicator.removeFromSuperview()
+            
+            if let button = self as? UIButton{
+                button.isEnabled = true
+            }
+            for button in blockingButtons{
+                button.isEnabled = true
+            }   
+        }
+        return undoIndicator
+    }
     func radius(_ radius : CGFloat? = nil){
         DispatchQueue.main.async {
             if let radius = radius {

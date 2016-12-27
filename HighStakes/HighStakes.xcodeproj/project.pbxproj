@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		33BBDA67C8355E4C4095E3FA /* Pods_HighStakesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334354391725E4D6384AF82F /* Pods_HighStakesTests.framework */; };
+		5419D1CC1E12C8F800BA9F25 /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5419D1CB1E12C8F800BA9F25 /* Initial.storyboard */; };
+		5419D1CE1E12CB2C00BA9F25 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419D1CD1E12CB2C00BA9F25 /* InitialViewController.swift */; };
+		5419D1D01E12CC2800BA9F25 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5419D1CF1E12CC2800BA9F25 /* Login.storyboard */; };
 		547CD48C1E118B9B00D2AC82 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD48B1E118B9B00D2AC82 /* LoginTableViewController.swift */; };
 		547CD48E1E118E1600D2AC82 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD48D1E118E1600D2AC82 /* SignUpTableViewController.swift */; };
 		547CD4901E118EDE00D2AC82 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD48F1E118EDE00D2AC82 /* User.swift */; };
@@ -47,6 +50,9 @@
 		0412402DEBDDF5ED9F8061CA /* Pods_HighStakes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HighStakes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3352B727C6D8C87ACC268A /* Pods-HighStakesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HighStakesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HighStakesTests/Pods-HighStakesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		334354391725E4D6384AF82F /* Pods_HighStakesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HighStakesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5419D1CB1E12C8F800BA9F25 /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Initial.storyboard; sourceTree = "<group>"; };
+		5419D1CD1E12CB2C00BA9F25 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		5419D1CF1E12CC2800BA9F25 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		547CD48B1E118B9B00D2AC82 /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTableViewController.swift; path = ../LoginTableViewController.swift; sourceTree = "<group>"; };
 		547CD48D1E118E1600D2AC82 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		547CD48F1E118EDE00D2AC82 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -129,6 +135,8 @@
 			children = (
 				54F6ED421E1179390089F0E0 /* Main.storyboard */,
 				54F6ED471E1179390089F0E0 /* LaunchScreen.storyboard */,
+				5419D1CB1E12C8F800BA9F25 /* Initial.storyboard */,
+				5419D1CF1E12CC2800BA9F25 /* Login.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -136,6 +144,7 @@
 		547CD4931E11919400D2AC82 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5419D1CD1E12CB2C00BA9F25 /* InitialViewController.swift */,
 				547CD48B1E118B9B00D2AC82 /* LoginTableViewController.swift */,
 				547CD48D1E118E1600D2AC82 /* SignUpTableViewController.swift */,
 				547CD4971E119D6B00D2AC82 /* MainViewController.swift */,
@@ -338,6 +347,8 @@
 				54F6ED491E1179390089F0E0 /* LaunchScreen.storyboard in Resources */,
 				54F6ED461E1179390089F0E0 /* Assets.xcassets in Resources */,
 				54F6ED441E1179390089F0E0 /* Main.storyboard in Resources */,
+				5419D1D01E12CC2800BA9F25 /* Login.storyboard in Resources */,
+				5419D1CC1E12C8F800BA9F25 /* Initial.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +516,7 @@
 				547CD4961E11925F00D2AC82 /* UIViewControllerExtension.swift in Sources */,
 				547CD4981E119D6B00D2AC82 /* MainViewController.swift in Sources */,
 				547CD49A1E1294FD00D2AC82 /* UIViewExtension.swift in Sources */,
+				5419D1CE1E12CB2C00BA9F25 /* InitialViewController.swift in Sources */,
 				547CD49E1E1298F900D2AC82 /* UIColorExtension.swift in Sources */,
 				547CD49C1E1298BB00D2AC82 /* AppNavigationController.swift in Sources */,
 				547CD48E1E118E1600D2AC82 /* SignUpTableViewController.swift in Sources */,
