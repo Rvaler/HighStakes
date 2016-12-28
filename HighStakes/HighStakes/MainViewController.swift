@@ -14,12 +14,20 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setLayout()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setLayout(){
+        guard let user = User.current() else {
+            return
+        }
+        self.lblWelcome.text = "Welcome \(user.fullName ?? "Unknown")"
     }
     
     // MARK: - Actions

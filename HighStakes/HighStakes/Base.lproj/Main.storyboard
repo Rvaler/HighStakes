@@ -21,25 +21,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQQ-Ur-J7e">
-                                <rect key="frame" x="158.5" y="323" width="58" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPU-Ss-VlP">
-                                <rect key="frame" x="152" y="99" width="71" height="21"/>
+                                <rect key="frame" x="152" y="161.5" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_HighStakes" translatesAutoresizingMaskIntoConstraints="NO" id="8TD-LV-C3a">
+                                <rect key="frame" x="87" y="302.5" width="200" height="62"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8TD-LV-C3a" firstAttribute="centerY" secondItem="tRE-GX-Bg6" secondAttribute="centerY" id="Af4-uR-xca"/>
+                            <constraint firstItem="8TD-LV-C3a" firstAttribute="centerX" secondItem="tRE-GX-Bg6" secondAttribute="centerX" id="BjQ-x2-xaH"/>
                             <constraint firstItem="FPU-Ss-VlP" firstAttribute="centerX" secondItem="tRE-GX-Bg6" secondAttribute="centerX" id="I0Q-k7-YZF"/>
-                            <constraint firstItem="FPU-Ss-VlP" firstAttribute="top" secondItem="L5W-Cz-IOE" secondAttribute="bottom" constant="35" id="N2V-4B-cQc"/>
-                            <constraint firstItem="aQQ-Ur-J7e" firstAttribute="centerX" secondItem="tRE-GX-Bg6" secondAttribute="centerX" id="RrW-Lt-NQk"/>
-                            <constraint firstItem="aQQ-Ur-J7e" firstAttribute="centerY" secondItem="tRE-GX-Bg6" secondAttribute="centerY" id="shh-Py-FAK"/>
+                            <constraint firstItem="8TD-LV-C3a" firstAttribute="top" secondItem="FPU-Ss-VlP" secondAttribute="bottom" constant="120" id="fWl-XL-MYD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7Se-Yh-1p7">
@@ -76,4 +73,7 @@
             <point key="canvasLocation" x="1157.5999999999999" y="487.10644677661173"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo_HighStakes" width="200" height="62"/>
+    </resources>
 </document>

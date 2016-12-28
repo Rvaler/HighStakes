@@ -32,7 +32,7 @@ class InitialViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let user = User.current() {
+        if let _ = User.current() {
             Segue.ToMain.performIn(self)
         } else {
             Segue.ToLogin.performIn(self)

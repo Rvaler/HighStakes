@@ -55,7 +55,7 @@ class LoginTableViewController: UITableViewController, YTPlayerViewDelegate {
     @IBAction func btnPlayVideoTouchUpInside(_ sender: UIButton) {
         self.btnPlayVideo.isHidden = true
         self.activityIndicatorPlayer.startAnimating()
-        let playerVars = ["playsinline": 1, "autoplay": 1]
+        let playerVars = ["playsinline": 1, "autoplay": 1, "modestbranding": 1, "showinfo": 0]
         self.viewPlayer.load(withVideoId: "ycPmjdwxIOQ", playerVars: playerVars)
     }
     
