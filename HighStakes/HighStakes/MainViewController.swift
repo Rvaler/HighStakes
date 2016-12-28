@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var lblWelcome: UILabel!
+    @IBOutlet weak var btnVisitSite: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,9 @@ class MainViewController: UIViewController {
     
     // MARK: - Actions
     
+    @IBAction func btnVisitSiteTouchUpInside(_ sender: Any) {
+        UIApplication.shared.openURL(NSURL(string:"http://www.hsacademy.com.br/") as! URL)
+    }
     @IBAction func btnLogoutTouchUpInside(_ sender: Any) {
         User.logOutInBackground { (error) in
             if let error = error { // logout failed
