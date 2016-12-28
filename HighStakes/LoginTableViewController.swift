@@ -7,20 +7,24 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
-class LoginTableViewController: UITableViewController {
+class LoginTableViewController: UITableViewController, YTPlayerViewDelegate {
 
     @IBOutlet weak var txtFieldEmail: UITextField!
     @IBOutlet weak var txtFieldPassword: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var btnSignUp: UIButton!
-    @IBOutlet weak var viewPlayerContent: UIView!
+    @IBOutlet weak var btnPlayVideo: UIButton!
+    @IBOutlet weak var viewPlayer: YTPlayerView!
+    @IBOutlet weak var activityIndicatorPlayer: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.btnLogin.radius(4)
         self.btnSignUp.radius(4)
         
+        self.viewPlayer.delegate = self
         self.hideKeyboardWhenTappedScreen()
     }
 
@@ -31,24 +35,28 @@ class LoginTableViewController: UITableViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.viewPlayer.pauseVideo()
+    }
+    
+    // MARK: - YTPlayerViewDelegate
+    
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        self.activityIndicatorPlayer.stopAnimating()
+        self.viewPlayer.playVideo()
+    }
+    func playerView(_ playerView: YTPlayerView, receivedError error: YTPlayerError) {
+        self.activityIndicatorPlayer.stopAnimating()
+        self.btnPlayVideo.isHidden = false
+    }
     
     // MARK: - Actions
 
-    @IBAction func btnPlayVideoTouchUpInside(_ sender: Any) {
-        let webView = UIWebView(frame: self.viewPlayerContent.frame)
-        webView.backgroundColor = UIColor.App_Orange
-        self.view.addSubview(webView)
-        self.view.bringSubview(toFront: webView)
-        
-        webView.allowsInlineMediaPlayback = true
-        webView.mediaPlaybackRequiresUserAction = false
-        webView.isOpaque = false
-        
-        let videoID = "ycPmjdwxIOQ" // https://www.youtube.com/watch?v=zN-GGeNPQEg
-        
-        let embededHTML = "<html><body style='margin:0px;padding:0px;'><script type='text/javascript' src='http://www.youtube.com/iframe_api'></script><script type='text/javascript'>function onYouTubeIframeAPIReady(){ytplayer=new YT.Player('playerId',{events:{onReady:onPlayerReady}})}function onPlayerReady(a){a.target.playVideo();}</script><iframe id='playerId' type='text/html' width='\(webView.frame.size.width)' height='\(webView.frame.size.height)' src='http://www.youtube.com/embed/\(videoID)?enablejsapi=1&rel=0&playsinline=1&autoplay=1' frameborder='0'></body></html>"
-        
-        webView.loadHTMLString(embededHTML, baseURL: Bundle.main.resourceURL)
+    @IBAction func btnPlayVideoTouchUpInside(_ sender: UIButton) {
+        self.btnPlayVideo.isHidden = true
+        self.activityIndicatorPlayer.startAnimating()
+        let playerVars = ["playsinline": 1, "autoplay": 1]
+        self.viewPlayer.load(withVideoId: "ycPmjdwxIOQ", playerVars: playerVars)
     }
     
     @IBAction func btnLoginTouchUpInside(_ sender: UIButton) {
