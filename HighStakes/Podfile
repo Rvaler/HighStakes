@@ -1,0 +1,16 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.2'
+use_frameworks!
+
+target 'HighStakes' do
+	pod 'Parse'
+	pod 'youtube-ios-player-helper'
+end
+target 'HighStakesTests' do
+#    inherit! :search_paths
+	pod 'Parse'
+	pod 'youtube-ios-player-helper'
+end
+target 'HighStakesUITests' do
+#    inherit! :search_paths
+end

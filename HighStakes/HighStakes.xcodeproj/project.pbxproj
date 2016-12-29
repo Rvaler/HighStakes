@@ -12,7 +12,7 @@
 		5419D1CE1E12CB2C00BA9F25 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419D1CD1E12CB2C00BA9F25 /* InitialViewController.swift */; };
 		5419D1D01E12CC2800BA9F25 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5419D1CF1E12CC2800BA9F25 /* Login.storyboard */; };
 		5419D1D51E146F3C00BA9F25 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5419D1D41E146F3C00BA9F25 /* UserTests.swift */; };
-		54530E1A1E156A3200E9B843 /* UITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54530E191E156A3200E9B843 /* UITextFieldDelegate.swift */; };
+		54530E1F1E156F5F00E9B843 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54530E1E1E156F5F00E9B843 /* UITextFieldExtension.swift */; };
 		547CD48C1E118B9B00D2AC82 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD48B1E118B9B00D2AC82 /* LoginTableViewController.swift */; };
 		547CD48E1E118E1600D2AC82 /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD48D1E118E1600D2AC82 /* SignUpTableViewController.swift */; };
 		547CD4901E118EDE00D2AC82 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547CD48F1E118EDE00D2AC82 /* User.swift */; };
@@ -56,7 +56,7 @@
 		5419D1CD1E12CB2C00BA9F25 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		5419D1CF1E12CC2800BA9F25 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		5419D1D41E146F3C00BA9F25 /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
-		54530E191E156A3200E9B843 /* UITextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegate.swift; sourceTree = "<group>"; };
+		54530E1E1E156F5F00E9B843 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		547CD48B1E118B9B00D2AC82 /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginTableViewController.swift; path = ../LoginTableViewController.swift; sourceTree = "<group>"; };
 		547CD48D1E118E1600D2AC82 /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		547CD48F1E118EDE00D2AC82 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -185,9 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				547CD4951E11925F00D2AC82 /* UIViewControllerExtension.swift */,
+				54530E1E1E156F5F00E9B843 /* UITextFieldExtension.swift */,
 				547CD4991E1294FD00D2AC82 /* UIViewExtension.swift */,
 				547CD49D1E1298F900D2AC82 /* UIColorExtension.swift */,
-				54530E191E156A3200E9B843 /* UITextFieldDelegate.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -542,12 +542,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				547CD4901E118EDE00D2AC82 /* User.swift in Sources */,
+				54530E1F1E156F5F00E9B843 /* UITextFieldExtension.swift in Sources */,
 				54F6ED3F1E1179390089F0E0 /* AppDelegate.swift in Sources */,
 				547CD4961E11925F00D2AC82 /* UIViewControllerExtension.swift in Sources */,
 				547CD4981E119D6B00D2AC82 /* MainViewController.swift in Sources */,
 				547CD49A1E1294FD00D2AC82 /* UIViewExtension.swift in Sources */,
 				5419D1CE1E12CB2C00BA9F25 /* InitialViewController.swift in Sources */,
-				54530E1A1E156A3200E9B843 /* UITextFieldDelegate.swift in Sources */,
 				547CD49E1E1298F900D2AC82 /* UIColorExtension.swift in Sources */,
 				547CD49C1E1298BB00D2AC82 /* AppNavigationController.swift in Sources */,
 				547CD48E1E118E1600D2AC82 /* SignUpTableViewController.swift in Sources */,
