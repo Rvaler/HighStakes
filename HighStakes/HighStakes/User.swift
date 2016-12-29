@@ -80,7 +80,11 @@ class User: PFUser {
         
         let newUser = User(email: email, password: password, firstName: firstName, lastName: lastName, fullName: "\(firstName) \(lastName)")
         newUser.signUpInBackground { (succeeded: Bool, error: Error?) in
-            response(newUser, error, nil)
+            if succeeded {
+                response(newUser, error, nil)
+            } else {
+                response(nil, error, nil)
+            }
         }
     }
 }

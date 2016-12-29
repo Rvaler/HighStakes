@@ -23,6 +23,7 @@ extension UIViewController {
         
         self.present(alertC, animated: true, completion: nil)
     }
+    // returns to first ViewController in the root of navigation
     func dismissModalStack(_ viewController: UIViewController, animated: Bool, completionBlock: (()->())?) {
         if viewController.presentingViewController != nil {
             var vc = viewController.presentingViewController!

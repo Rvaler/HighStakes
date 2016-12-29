@@ -9,7 +9,8 @@
 import UIKit
 
 extension UIView {
-    
+    // shows an activity indicator blocking buttons in your choice, 
+    // must call undo to enable buttons back again
     func showActivityIndicator(_ blockingButtons: UIButton...) -> (()->()){
         
         for button in blockingButtons{

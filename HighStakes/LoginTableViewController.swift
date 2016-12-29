@@ -9,7 +9,7 @@
 import UIKit
 import youtube_ios_player_helper
 
-class LoginTableViewController: UITableViewController, YTPlayerViewDelegate {
+class LoginTableViewController: UITableViewController, YTPlayerViewDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var txtFieldEmail: UITextField!
     @IBOutlet weak var txtFieldPassword: UITextField!
@@ -24,6 +24,8 @@ class LoginTableViewController: UITableViewController, YTPlayerViewDelegate {
         self.btnLogin.radius(4)
         self.btnSignUp.radius(4)
         
+        self.txtFieldPassword.delegate = self
+        self.txtFieldEmail.delegate = self
         self.viewPlayer.delegate = self
         self.hideKeyboardWhenTappedScreen()
     }
@@ -37,6 +39,17 @@ class LoginTableViewController: UITableViewController, YTPlayerViewDelegate {
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.viewPlayer.pauseVideo()
+    }
+    
+    // MARK:- Textfield
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case self.txtFieldPassword:
+            self.dismissKeyboard()
+        default:
+            _ = textField.setFocusToNextTextField(self.view)
+        }
+        return true
     }
     
     // MARK: - YTPlayerViewDelegate

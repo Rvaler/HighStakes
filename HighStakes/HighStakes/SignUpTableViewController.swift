@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpTableViewController: UITableViewController {
+class SignUpTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var txtFieldFirstName: UITextField!
     @IBOutlet weak var txtFieldLastName: UITextField!
@@ -20,12 +20,27 @@ class SignUpTableViewController: UITableViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedScreen()
         self.btnSignUp.radius(4)
+        
+        self.txtFieldEmail.delegate = self
+        self.txtFieldPassword.delegate = self
+        self.txtFieldLastName.delegate = self
+        self.txtFieldFirstName.delegate = self
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    // MARK:- Textfield
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case self.txtFieldPassword:
+            self.dismissKeyboard()
+        default:
+            _ = textField.setFocusToNextTextField(self.view)
+        }
         return true
     }
 
